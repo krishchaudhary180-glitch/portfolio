@@ -1,11 +1,11 @@
-## My Portfolio
+## My Portfolio 📔📖📑
 
-This is my personal portfolio website, 
+This is my personal portfolio website, 🖥️💽
 built to showcase my interests, skills, and ongoing learning journey at the intersection of biotechnology and programming.
 
 ---
 
-## Overview
+## Overview 📜📎
 
 The website reflects my inclination toward understanding systems deeply, 
 approaching problems analytically, and presenting ideas with clarity and structure. 
@@ -13,7 +13,7 @@ It combines a minimal design with subtle visual enhancements to create a clean a
 
 ---
 
-## Features
+## Features 🦉📋
 
 * **Dynamic Gradient Header with Animation**
   The portfolio opens with a visually engaging heading that utilizes animated gradient text and glow effects, creating a strong first impression while reflecting a modern, design-conscious approach.
