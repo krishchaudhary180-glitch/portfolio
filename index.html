@@ -9,19 +9,39 @@
 
     <h1>KRISH CHAUDHARY</h1>
 
-    <section id="Stats">
-        <h2>My Stats:</h2>
-        <p>Student at <B>Amity University MP</B> <br> Associated with <b>Amity Coding Club</b> <br>
-        I am currently pursuing a degree in Biotechnology at Amity University, Madhya Pradesh, <br>Where I engage deeply with the scientific principles that govern living systems and their applications in advancing human understanding. Alongside this academic trajectory, I am actively cultivating proficiency in programming, recognizing its growing significance as a tool for innovation and problem-solving across disciplines. <br>This dual pursuit reflects my inclination toward an interdisciplinary approach merging analytical rigor with computational logic to explore complex problems, derive meaningful insights, and contribute to domains where biology and technology increasingly converge.
-</p>
-    </section>
 <hr/>
     <section id="about">
         <h2>About Me:</h2>
         <p>I’m someone who doesn’t just settle for knowing things!! I like to understand them, take them apart, and see how they really work.<br>Curiosity drives most of what I do, whether it’s exploring concepts in science, figuring out how technology fits together, or just chasing a random question until I’ve squeezed every bit of meaning out of it.<br>I tend to notice details others might skip, and once something catches my attention, I don’t drop it easily—I’ll keep digging, questioning, and connecting ideas until it clicks in a way that feels complete. <br>At the same time, I’m not boxed into one area; I move between interests — coding, problem-solving, learning new concepts, even refining how things look and present—because I like both the logic behind things and the way they come together creatively. <br>I can be intense when I’m focused, sometimes stubborn about getting things right, but that’s also what helps me push through confusion and actually learn instead of just memorizing. I appreciate efficiency and clarity, but I also like things to have a certain edge or style—something that makes them stand out rather than feel generic. <br><br>Overall, I’d say I’m someone who’s constantly evolving, not satisfied with surface-level answers, and always looking to sharpen both <b>" I think and what I create".</b>
 </p>
     </section>
+<hr>
 
+    <section id="stats">
+    <h2>My Stats</h2>
+
+    <div class="stats-container">
+        <div class="stat-card">
+            <h3>139+</h3>
+            <p>Days Learning</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>7+</h3>
+            <p>Projects Built</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>12+</h3>
+            <p>Fields Explored</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>∞</h3>
+            <p>Curiosity Level</p>
+        </div>
+    </div>
+</section>
 <hr>
 
 <section id="interests">
@@ -90,9 +110,48 @@
     <div class="skill">Digital art</div>
     <div class="skill">Visual Editing</div>
     <div class="skill">Tactical Approach</div>
+    <div class="skill">Much more +</div>
   </div>
 </section>
 <hr>
+
+
+<section id="favs">
+    <h2>Favorites</h2>
+
+    <div class="fav-grid">
+
+        <div class="fav-card">
+            <h3>💻 Coding</h3>
+            <p>Building things from scratch and breaking them apart and Understanding the code behind everything⌨️</p>
+        </div>
+
+        <div class="fav-card">
+            <h3>🎮 Gaming</h3>
+            <p>I lean toward strategic games and out of many one of my fav is CHESS♟️</p>
+        </div>
+
+        <div class="fav-card">
+            <h3>📚 Learning</h3>
+            <p>Whatever seems logical enough to understand I grab that no matter if it's understanding a cars machenics or rocket science🔬</p>
+        </div>
+
+        <div class="fav-card">
+            <h3>⚡ Tech</h3>
+            <p>Staying up-to-date with the latest technological advancements and tools and exploring new tech which excites me👨‍💻</p>
+        </div>
+
+        <div class="fav-card">
+            <h3>🚀 Curiosity</h3>
+            <p>Always questioning, always digging deeper into the terretoris I don't even belong to, some of my fav field to explore is vedants and astronomical science. Curiosity is my fuel 🔥</p>
+        </div>
+
+          <div class="fav-card">
+            <h3>🎬 Cinema</h3>
+            <p>Psychological thrillers, action, chase, suspense, and clever comedy are my zone because they force you to think ahead, adapt, and constantly sharpen your brain. some of my favs in these categories are Seven, Dark, Fight club, Gulley guleiyan, Tenet, Shutter island and infinitely more🎥</p>
+          </div>
+    </div>
+</section>
 
 <section id="contact" class="section">
   <h2>Contact</h2>
@@ -115,5 +174,31 @@
   <pre> [ Page Made by <b>Krish Chaudhary</b> ]</pre>
 </footer>
 
+
+<script>
+const counters = document.querySelectorAll(".stat-card h3");
+
+counters.forEach(counter => {
+    let target = counter.innerText;
+    
+    // remove + or other symbols
+    let number = parseInt(target.replace(/\D/g, ""));
+    
+    let count = 0;
+    let speed = number / 100;
+
+    function updateCount() {
+        if (count < number) {
+            count += speed;
+            counter.innerText = Math.ceil(count) + "+";
+            setTimeout(updateCount, 20);
+        } else {
+            counter.innerText = target;
+        }
+    }
+
+    updateCount();
+});
+</script>
 </body>
 </html>

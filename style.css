@@ -59,13 +59,99 @@ margin:15px;
   opacity: 0.8;
 }
 
+
+#stats {
+    position: relative;
+    padding: 80px 20px;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    background: transparent;
+};
+
+
+#stats::before,
+#stats::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.5;
+    z-index: 0;
+}
+
+#stats::before {
+    background: radial-gradient(circle, #ff88cf, transparent 70%);
+    top: -100px;
+    left: -100px;
+    animation: moveBlob1 12s infinite alternate ease-in-out;
+}
+
+
+#stats::after {
+    background: radial-gradient(circle, #00ffff, transparent 70%);
+    bottom: -100px;
+    right: -100px;
+    animation: moveBlob2 14s infinite alternate ease-in-out;
+}
+
+@keyframes moveBlob1 {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(150px, 100px); }
+}
+
+@keyframes moveBlob2 {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(-150px, -120px); }
+}
+
+#stats h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.stat-card {
+    background: rgba(0, 0, 0, 0.241);
+    border-radius: 15px;
+    padding: 30px 20px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.stat-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 20px rgba(0, 153, 255, 0.5);
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Skills Section */
 .skills-container {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
 
-/* Skill card */
 .skill {
   position: relative;
   padding: 8px 16px;
@@ -90,10 +176,10 @@ margin:15px;
   border-radius: 25px;
   padding: 1px;
   background: linear-gradient(120deg, #6c63ff, #00ffd5, #ff6ec4);
-
-  -webkit-mask: 
-    linear-gradient(#000 0 0) content-box, 
-    linear-gradient(#000 0 0);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, 
+                linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, 
+        linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0;
@@ -104,14 +190,11 @@ margin:15px;
   transform: translateY(-3px) scale(1.05);
   color: #ffffff;
   background: rgba(255,255,255,0.08);
+  box-shadow: 0 0 12px rgba(108,99,255,0.4);
 }
 
 .skill:hover::before {
   opacity: 1;
-}
-
-.skill:hover {
-  box-shadow: 0 0 12px rgba(108,99,255,0.4);
 }
 
 /* Interests Section */
@@ -132,19 +215,16 @@ margin:15px;
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.1);
   transition: 0.2s ease;
-}
-
-.interest-card:hover {
-  border-color: #6c63ff;
-  transform: translateY(-12px);
-}
-
-.interest-card {
   position: relative;
   padding: 15px;
   border-radius: 12px;
   overflow: hidden;
   color: #fff;
+}
+
+.interest-card:hover {
+  border-color: #6c63ff;
+  transform: translateY(-12px);
 }
 
 .interest-card::before {
@@ -153,7 +233,7 @@ margin:15px;
   inset: 0;
   background-size: cover;
   background-position: center 70%;
-  opacity: 0.35; /* controls image visibility */
+  opacity: 0.35; /*visibility */
   z-index: 0;
 }
 
@@ -161,7 +241,7 @@ margin:15px;
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6); /* darkness level */
+  background: rgba(0, 0, 0, 0.6); /* darkness*/
   z-index: 1;
 }
 
@@ -192,6 +272,124 @@ margin:15px;
 
 .interest-card:nth-child(6)::before {
   background-image: url("corelation.jpg");
+}
+
+
+#favs {
+    position: relative;
+    padding: 10px 20px;
+    color: white;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0f0f0f, #3f727e);
+}
+
+#favs::before {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    background: radial-gradient(circle at 30% 40%, rgba(255,0,255,0.15), transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(0,255,255,0.15), transparent 50%);
+    filter: blur(15px);
+    animation: none; 
+    z-index: 0;
+}
+
+#favs::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: 1;
+}
+
+
+#favs > * {
+    position: relative;
+    z-index: 8;
+}
+
+/*grid spacing*/
+#favs .fav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    column-gap: 25px; 
+    row-gap: 25px;     
+}
+
+
+.fav-card {
+    position: relative;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(8px);
+    border-radius: 18px;
+    padding: 10px;
+    overflow: hidden;
+    transition: all 0.35s ease;
+    cursor: pointer;
+}
+
+
+.fav-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    padding: 1.7px;
+    background: linear-gradient(120deg, #ff00ff, #00ffff, #00ff99, #ff00ff);
+    background-size: 300%;
+    animation: borderFlow 4s linear infinite;
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+.fav-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.08), transparent 70%);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.fav-card:hover {
+    transform: translateY(-10px) scale(1.04);
+    box-shadow:
+        0 0 20px rgba(0,255,255,0.4),
+        0 0 40px rgba(255,0,255,0.3);
+}
+
+.fav-card:hover::after {
+    opacity: 1;
+}
+
+.fav-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fav-card p {
+    opacity: 1;
+}
+
+@keyframes borderFlow {
+    0% { background-position: 0%; }
+    100% { background-position: 300%; }
+}
+
+@keyframes bgMove {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(100px, -80px); }
 }
 
 /* platform Links */
