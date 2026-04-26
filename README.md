@@ -1,7 +1,7 @@
 ## My Portfolio 📔📖📑
 
 This is my personal portfolio website, 🖥️💽
-built to showcase my interests, skills, and ongoing learning journey at the intersection of biotechnology and programming.
+built to showcase my interests, skills, favs and ongoing learning journey at the intersection of biotechnology and programming.
 
 ---
 
