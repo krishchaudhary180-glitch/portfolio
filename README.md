@@ -1,3 +1,8 @@
+## live on 🚨
+https://krishchaudhary180-glitch.github.io/portfolio/
+
+## Being a biotech student can't stop me from coding!! Right?
+
 ## My Portfolio 📔📖📑
 
 This is my personal portfolio website, 🖥️💽
